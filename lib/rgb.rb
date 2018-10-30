@@ -1,13 +1,11 @@
-def to_hex(r,g,b)
+def to_hex(r, g, b)
   [r, g, b].inject('#') do |hex, n|
-    @i = hex + n.to_s(16).rjust(2, '0')
+    hex + n.to_s(16).rjust(2, '0')
   end
-  puts @i
 end
 
 def to_ints(hex)
-  r, g, b = hex.scan(/\w\w/)
-  p [r, g, b].map(&:hex)
+  hex.scan(/\w\w/).map(&:hex)
 end
 
 to_hex(0, 0, 0)
